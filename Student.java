@@ -1,20 +1,42 @@
-package project7_oop;
-
-//实体类：用来表示一个 类型
-//学生类型
-//java的文件名格式要与 public 修饰的类名一样
-//可以写多个类  但是不能是 public 修饰
-//java最基本的运行的单位就是类
+package project8_oop;
 
 public class Student {
-	String name;
-	int id;
-	int age;
-	String sex;
 	
-	public void happyBirsthday() {
-		System.out.println(name+"过生日啦！");
-		age++;
+	private String name;
+	private int totalScore;
+	
+	private int num;  //考试次数
+	
+	//对姓名完成初始化
+	public Student(String n) {
+		name=n;
+	}
+	
+	//获取姓名
+	public String getname() {
+		return name; 
+	}
+	
+	
+	//输入小测验成绩的方法
+	public void addQuiz(int score) {
+		//累加成绩
+		totalScore+=score;
+		num++;
+	}
+	
+	//获取总成绩
+	public int getTotalScore() {
+		return totalScore;
+	}
+	
+	//获取平均成绩的方法
+	public int getAverageScore() {
+		if(num==0) {
+			System.out.println(name+"没有参加过考试！");
+			return 0;
+		}
+		return totalScore/num;
 	}
 
 }

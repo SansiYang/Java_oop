@@ -1,23 +1,16 @@
-package project7_oop;
-
-import java.util.Random;
+package project8_oop;
 
 public class test2 {
 
 	public static void main(String[] args) {
-		Random r=new Random();
+		Athlet a=new Athlet("µÏåÈ",45);
+		//a.setName("Ì©ÂÞ");
+		//a.setWeight(43.3);
 		
-		for(int i=0;i<10;i++) {
-			Person p=new Person();
-			p.name="¾ÅÎ²Ñýºü"+i;
-			p.height=1.65;
-			p.weight=r.nextInt(30)+50;
-			
-			String str=p.bmi();
-			System.out.println(str);
-		}
-		
-		
+		a.excise();
+		System.out.println(a.getName()+"\t"+a.getWeight() );
+		a.excise();
+		System.out.println(a.getName()+"\t"+a.getWeight() );
 	}
 
 }
